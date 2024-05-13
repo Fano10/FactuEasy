@@ -12,13 +12,13 @@ class BaseModel(Model): #une classe de base pour tous les models de donnees de l
 
 class Bill(BaseModel):
     id = AutoField(primary_key=True)
-    nom = CharField()
+    name = CharField()
     date = DateField()#ne prend pas en compte l'heure et minute
     total = FloatField()
 
 class Product(BaseModel):
     id = AutoField(primary_key=True)
-    nom = CharField()
+    name = CharField()
     idBill = IntegerField()
     price = FloatField()
 
