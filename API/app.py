@@ -1,10 +1,13 @@
 from flask import Flask
+from flask_cors import CORS
 from MVC.model import *
 from MVC.service import *
 from MVC.view import ViewAllBill,ViewProducts
 
 app = Flask(__name__)
+CORS(app) #Activer CORS pour toutes les routes
 init_app(app)
+
 
 @app.route('/')
 def index():

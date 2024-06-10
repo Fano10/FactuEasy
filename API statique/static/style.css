@@ -1,0 +1,45 @@
+html body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Helvetica','Arial', 'monospace';
+}
+body #corps{
+    width: 70%;
+    height: 20%;
+    margin: 40px auto;
+    position: relative;
+}
+body header{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+a {
+    text-decoration:none;
+    color: rgb(59, 52, 52);
+}
+a:hover{
+    color: rgb(128, 128, 62);
+}
+
+table{
+    height: 100%;
+    width: 100%;
+    margin: 100px auto;
+}
+
+thead tr{
+    text-align: center;
+}
+
+tbody tr {
+    text-align: center;
+}
+
+th,td {
+    padding: 15px, 20px;
+}
