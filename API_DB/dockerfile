@@ -1,0 +1,13 @@
+FROM python:3.10.14-bookworm
+
+RUN pip install --upgrade pip
+RUN pip install flask peewee flask_cors requests
+EXPOSE 5000
+#copier le fichier CODE-PERMANENT RAKM11100201 et changer son nom en site
+COPY API_DB /site
+#Nous avons utilisé WORKDIR /site pour définir le répertoire de travail de l'image Docker sur /site.
+WORKDIR /site
+#initialisation du bd
+RUN flask init-db
+#commande pour demmarer notre application
+CMD python /site/app.py
