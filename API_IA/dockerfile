@@ -1,0 +1,16 @@
+FROM python:3.11.9-bullseye
+
+RUN pip install --upgrade pip
+# For fixing ImportError: libGL.so.1: cannot open shared object file: No such file or directory
+RUN apt-get update
+RUN apt install -y libgl1-mesa-glx
+RUN pip install flask flask_cors easyocr
+RUN pip install tensorflow_hub
+RUN pip install "tensorflow==2.12.0"
+RUN pip install opencv-python
+#exposer le port
+EXPOSE 3000
+#copier le fichier CODE-PERMANENT RAKM11100201 et changer son nom en site
+COPY API_IA /site
+#commande pour demmarer notre application
+CMD python /site/app.py
