@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+            <meta charset="UTF-8">
+            <title>FactuEasy</title>
+            
+            <script src="{{url_for('static',filename='index/script.js')}}"></script>
+            <link href="{{url_for('static',filename='index/style.css')}}" type="text/css" rel="stylesheet">
+            <!--<script src="C:\Users\rsjas\Documents\UQAC\été 2024\web\API statique\static\index\script.js"></script>
+            <link href="C:\Users\rsjas\Documents\UQAC\été 2024\web\API statique\static\index\style.css" rel="stylesheet">-->
+            <script src="https://kit.fontawesome.com/bca7f89311.js" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <div id="corps">
+            <header>
+                <h1><a href="/">FactuEasy</a></h1>
+                <h3><a href="/allBills">mesAchats</a></h3>
+                <h3><a href="/allItem">mesArticles</a></h3>
+                <h3><a href="/">Suggestions</a></h3>
+                <h3><a href="/">Profil</a></h3>
+            </header>
+        </div>
+        <!--Uploader l'image-->
+        <div class="upload">
+            <h1>Uploader une image d'une facture</h1>
+            <label for="input-file">Uploader</label>
+            <input type="file" accept="image/*" id="input-file">
+        </div>
+        <!--En attente-->
+        <div class="loading">
+            <p>Veuillez patienter...</p>
+            <div class="loader"></div>
+        </div>
+        <!--Recevoir les articles et produits-->
+        <div class="resultat">
+            <div class="icon">
+                <i class="fa-solid fa-plus" id="add-article"></i>
+                <i class="fa-solid fa-plus" id="add-prix"></i>
+            </div>
+            <div class="body_resultat">
+                <div class="article_class">
+                    <ul class ="sortable-list-article">
+                    </ul>
+                </div>
+                <div class="prix_class">
+                    <ul class ="sortable-list-prix">
+                    </ul>
+                </div>
+            
+            </div>
+            <button id="bouton_valider">Valider</button>
+        </div>
+        <dialog>
+            <span>Le nombre d'article et le nombre de prix doit etre pareil </span>
+            <button id="close_dialog">Okay</button>
+        </dialog>
+    </body>
+
+</html>

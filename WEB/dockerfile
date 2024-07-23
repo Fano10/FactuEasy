@@ -1,0 +1,9 @@
+FROM python:3.10.14-bookworm
+
+RUN pip install --upgrade pip
+RUN pip install flask peewee flask_cors requests
+EXPOSE 8080
+#copier le fichier CODE-PERMANENT RAKM11100201 et changer son nom en site
+COPY WEB /site
+#commande pour demmarer notre application
+CMD python /site/app.py

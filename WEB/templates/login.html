@@ -1,0 +1,65 @@
+<!--
+Dans ce meme code nous allons apprendre sur les forms
+1) Premierement, la balise form en soit a 2 attributs tres importants:
+    a) action: lien ou on envoye la form
+    b) method: GET(les informations seront collee sur le lien lors de l'envoie, POST(envoye d'information pour un serveur))
+    c) enctype: specifie comment les donnees du formulaire doivent etre encodees
+2)Dans le form nos avons le balise 'input'. C'est le carre ou on ecrit de l'information. Dans ce balise on a aussi des attributs:
+    a) name: le nom de l'input(comme le nom du variable du coup c'est par se nom qu'on peut acceder au valeur de l'input)
+    b)type: le type de l'input (texte,password,email,number,date)
+    c)id: id de l'input pour le HTML (comme toutes les autres id)
+    d)value: la valeur par defaut de l'input
+    e)placeholder: c'est une information ecrit sur l'input en transparent. Ce n'est pas une valeur, c'est vraiment juste pour informer l'utilisateur
+    f)required: l'input doit contenir de l'information avant d'etre envoyer
+3) Nous avons aussi le balise label: Elle sert juste a mettre du text. 
+    a)Par defaut, en cliquant sur le label, l'input n'est pas selectionner. Mais on utilisons l'attribut for=idD'un input. Le label va etre relier avec l'input.
+    Si vous includer l'input directement dans le label, sa fera la meme chose
+4) Parlons de quelques autres input qui sont importants:
+    a) input de type=checkbox:
+        <label for="banana">Banane</label>
+        <input type="checkbox" name="banana" id="banana">
+    b) input de type radioBox:
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="male" value="male">
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="female" value="female">
+    c) input de type file:(enctype doit etre: multipart/form-data)
+        <label for="file">Upload File</label>
+        <input type="file" id="file" name="file">
+5) Il y aussi un autre balise qui est le select: choix selectionner
+    <label for="eyeColor">Eye Color></label>
+    <select name="eyeColor" id="eyeColor">
+        <option value="Green">Green</option>
+        <option label="Red" value = "Red"></option>
+    </select>
+-->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{url_for('static',filename='login/script.js')}}"></script>
+    <link href="{{url_for('static',filename='login/style.css')}}" type="text/css" rel="stylesheet">
+    <!---
+    <link href="../static/login/style.css" type="text/css" rel="stylesheet">
+    <script src="../static/login/script.js"></script> 
+    -->
+    <title>Login in FactuEasy</title>
+</head>
+<body>
+    <form id="form">
+        <p class="intro">Welcome To FactuEasy</p>
+        <div class="user">
+            <label for="name">Username:</label>
+            <input type="text" id="name" name="username" required>
+        </div>
+        <div class="password">
+            <label>Password:
+                <input type="password" name = "password" id="password" required>
+            </label>
+        </div>
+        <p id="erreur" class="erreur"></p>
+        <button type="submit">Log In</button>
+    </form>
+</body>
+</html>

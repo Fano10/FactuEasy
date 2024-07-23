@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+            <meta charset="UTF-8">
+            <title>FactuEasy</title>
+            <script src="{{url_for('static',filename='allBills/script.js')}}"></script>
+            <link href="{{url_for('static',filename='allBills/style.css')}}" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="corps">
+            <header>
+                <h1><a href="/">FactuEasy</a></h1>
+                <h3><a href="/allBills">mesAchats</a></h3>
+                <h3><a href="/allItem">mesArticles</a></h3>
+                <h3><a href="/">Suggestions</a></h3>
+                <h3><a href="/">Profil</a></h3>
+            </header>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Centre d'achat</th>
+                    <th>Date</th>
+                    <th>Total</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </body>
+
+</html>
