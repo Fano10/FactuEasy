@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apiia-deployment
+  labels:
+    app: apiia
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apiia
+  template:
+    metadata:
+      labels:
+        app: apiia
+    spec:
+      containers:
+      - name: apiia
+        image: fanomezana10/fano_api_ia:v1.0
+        resources:
+          requests:
+            memory: "3Gi"   # Mémoire demandée
+            cpu: "1"        # CPU demandée
+          limits:
+            memory: "5Gi"   # Limite de mémoire
+            cpu: "2"        # Limite de CPU
+        ports:
+        - containerPort: 3000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: apiia-service
+spec:
+  selector:
+    app: apiia
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000

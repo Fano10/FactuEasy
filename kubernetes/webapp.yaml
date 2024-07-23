@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-deployment
+  labels:
+    app: webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - name: webapp
+        image: fanomezana10/fano_api_web:v1.0
+        ports:
+        - containerPort:  8080
+        env:
+        - name: URL_API_DB
+          valueFrom:
+            configMapKeyRef:
+              name: api-config
+              key: apidb-url
+        - name: URL_API_IA
+          valueFrom:
+            configMapKeyRef:
+              name: api-config
+              key: apiia-url      
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: webapp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-config
+data:
+  apidb-url: http://apidb-service:5000
+  apiia-url: http://apiia-service:3000
